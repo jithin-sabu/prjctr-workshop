@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Tab</title>
+  <link rel="stylesheet" href="newtab.css" />
+</head>
+<body>
+  <main class="page">
+    <!-- Greeting changes with time of day; edit YOUR NAME in newtab.js -->
+    <h1 id="greeting" class="greeting">Good morning, Your Name</h1>
+
+    <!-- Live clock + today's date -->
+    <section class="clock-block" aria-live="polite">
+      <div id="clock" class="clock">00:00</div>
+      <div id="date" class="date">Loading date…</div>
+    </section>
+
+    <!-- Quick-link tiles — favicons live in icons/; edit links in newtab.js -->
+    <nav id="quick-links" class="quick-links" aria-label="Quick links"></nav>
+
+    <!-- Placeholder card for future features -->
+    <section class="idea-card" aria-label="Idea placeholder">
+      ✨ Your idea goes here
+    </section>
+  </main>
+
+  <script src="newtab.js"></script>
+</body>
+</html>
