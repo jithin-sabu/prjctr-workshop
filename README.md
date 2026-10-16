@@ -79,12 +79,6 @@ I want to build a Chrome extension in this folder that replaces Chrome's new tab
 My idea: [describe what you want to see every time you open a new tab]
 
 Before you build anything, ask me up to 5 questions to understand what I want. Then suggest the simplest first version, and wait for me to say go.
-
-When you build it:
-- Plain HTML, CSS and JavaScript only. No frameworks, no libraries, nothing to install.
-- All JavaScript in separate .js files. No inline scripts or onclick="" attributes.
-- Manifest V3, chrome_url_overrides for the new tab, as few permissions as possible.
-- Then tell me step by step how to load it in Chrome.
 ```
 
 ### Path B: Start from the base
@@ -95,27 +89,21 @@ If you'd rather skip ahead, the [`base-extension`](base-extension) folder has a 
 <summary><b>The prompt that built the base</b> (click to open)</summary>
 
 ```
-Build me a sample Chrome extension in this folder that replaces Chrome's new tab page with a custom page. It's a starting point that other people will download and build on, so keep it simple and easy to change:
-- Plain HTML, CSS and JavaScript only. No frameworks, no libraries, no build step, nothing to install.
-- Put all JavaScript in a separate .js file. No inline <script> code and no onclick="" attributes, because Chrome blocks those in extensions.
+Build me a Chrome extension in this folder that replaces Chrome's new tab page with my own custom page. I'm not a programmer, so keep it simple.
 
 What the page shows:
-1. A greeting that changes with the time of day ("Good morning", "Good afternoon", "Good evening"), followed by a name. Use "Friend" as the name, in a clearly labelled variable at the very top of the JS file, with a comment saying "Change this to your name".
+1. A greeting that changes with the time of day ("Good morning", "Good afternoon", "Good evening"), followed by my name: [YOUR NAME]. 
 2. A large clock (hours and minutes) that stays up to date, with today's date underneath.
-3. A row of 4 quick-link tiles: Gmail, YouTube, GitHub and Google Maps, each with the site's name underneath. Use each site's real icon: download its favicon into an "icons" folder inside this extension and show that on the tile. Don't use emoji. If an icon can't be downloaded, show the site's first letter instead. Keep the links in a simple list at the top of the JS file so they're easy to change.
-4. Below that, an empty card with a dashed border that says "✨ Your idea goes here". This is where people will add their own features.
+3. 3. A row of 4 quick-link tiles: [Gmail, YouTube, GitHub, Google Maps], each with the site's name underneath. Use each site's real icon: download its favicon into an "icons" folder inside this extension and show that on the tile. Don't use emoji. If an icon can't be downloaded, show the site's first letter instead.
+4. Below that, an empty card with a dashed border that says "✨ Your idea goes here". This is a placeholder for features I'll add later.
 
 How it looks:
-- Calm, modern and minimal. Everything centred, a soft gradient background, a clean system font, gentle rounded corners.
-- It should look good on a small laptop screen and a big monitor.
+- Calm, modern and minimal. Everything centred, a clean system font, gentle rounded corners.
 
 Technical:
-- Manifest V3, using chrome_url_overrides to replace the new tab.
-- No permissions in the manifest.
 - Name the extension "My New Tab".
-- Keep the code tidy, with short comments explaining each part in plain English, so a beginner can find their way around.
+- Keep the code tidy, with short comments explaining each part, so I can add features later.
 
-When you're done, list the files you created in one line each, then tell me how to load the extension in Chrome.
 ```
 
 </details>
