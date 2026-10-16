@@ -1,4 +1,4 @@
-![Build the thing you wish existed. Vibe Coding Club workshop with Jithin, Projector Community and RichardsDee](images/hero.png)
+![Build a Chrome extension. Vibe Coding Club workshop with Jithin, Projector Community and RichardsDee](images/hero.png)
 
 # Build Your Own New Tab ✨
 
