@@ -11,6 +11,7 @@ Everything you need is on this page, in the order you'll do it. Every grey box i
 ## Contents
 
 **Set up**
+
 1. [Install Chrome](#1-install-chrome)
 2. [Install your AI tool](#2-install-your-ai-tool)
 3. [Get the workshop files](#3-get-the-workshop-files)
@@ -18,6 +19,7 @@ Everything you need is on this page, in the order you'll do it. Every grey box i
 5. [Load it into Chrome](#5-load-it-into-chrome)
 
 **Build**
+
 6. [Add your own features](#6-add-your-own-features)
 7. [When it breaks](#7-when-it-breaks)
 8. [Make it look good](#8-make-it-look-good)
@@ -26,6 +28,7 @@ Everything you need is on this page, in the order you'll do it. Every grey box i
 11. [Stuck for ideas?](#11-stuck-for-ideas)
 
 **More**
+
 12. [Tools and models](#12-tools-and-models)
 13. [After tonight](#13-after-tonight)
 
