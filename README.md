@@ -1,8 +1,6 @@
 ![Build a Chrome extension. Vibe Coding Club workshop with Jithin, Projector Community and RichardsDee](images/hero.png)
 
-# Build Your Own New Tab ✨
-
-**Vibe Coding Club × Projector · Dublin**
+**Vibe Coding Club × Projctr Community · Dublin**
 
 Tonight you'll build a Chrome extension that replaces the boring new tab page with something that's yours: a dashboard, a to-do list, a daily dose of cat pictures, whatever you can imagine. You don't need to know how to code. You point an AI at a folder, describe what you want, and it writes the code straight into that folder.
 
