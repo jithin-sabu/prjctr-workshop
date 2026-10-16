@@ -4,48 +4,177 @@
 
 Tonight you'll build a Chrome extension that replaces the boring new tab page with something that's yours: a dashboard, a to-do list, a daily dose of cat pictures, whatever you can imagine. You don't need to know how to code. You point an AI at a folder, describe what you want, and it writes the code straight into that folder.
 
-Everything you need is on this page. Every grey box is a prompt: hover over it and click the copy button in the corner.
+Everything you need is on this page, in the order you'll do it. Every grey box is a prompt: hover over it and click the copy button in the corner.
 
 ---
 
 ## Contents
 
-1. [Before you start](#1-before-you-start)
-2. [Pick your path](#2-pick-your-path)
-3. [Load it into Chrome](#3-load-it-into-chrome)
-4. [Add your own features](#4-add-your-own-features)
-5. [When it breaks](#5-when-it-breaks)
-6. [Make it look good](#6-make-it-look-good)
-7. [Understand what you built](#7-understand-what-you-built)
-8. [Level up](#8-level-up)
-9. [Stuck for ideas?](#9-stuck-for-ideas)
-10. [Tools and models](#10-tools-and-models)
-11. [After tonight](#11-after-tonight)
+**Set up**
+1. [Install Chrome](#1-install-chrome)
+2. [Install your AI tool](#2-install-your-ai-tool)
+3. [Get the workshop files](#3-get-the-workshop-files)
+4. [Pick your path and build](#4-pick-your-path-and-build)
+5. [Load it into Chrome](#5-load-it-into-chrome)
+
+**Build**
+6. [Add your own features](#6-add-your-own-features)
+7. [When it breaks](#7-when-it-breaks)
+8. [Make it look good](#8-make-it-look-good)
+9. [Understand what you built](#9-understand-what-you-built)
+10. [Level up](#10-level-up)
+11. [Stuck for ideas?](#11-stuck-for-ideas)
+
+**More**
+12. [Tools and models](#12-tools-and-models)
+13. [After tonight](#13-after-tonight)
 
 ---
 
-## 1. Before you start
+## 1. Install Chrome
 
-You need:
-
-- **Google Chrome** on a laptop (Mac, Windows or Linux all work)
-- **An AI tool that can work inside a folder on your computer.** Tonight we're using **[TOOL]**. Install it and sign in before the session.
-- **A backup plan for limits.** Free plans have message limits, and you might hit one mid-build. If that happens, open the same folder in another tool and carry on: your files are all still there.
-
-Then:
-
-1. Make an empty folder somewhere easy to find, like your Desktop, and call it `my-new-tab`.
-2. Open that folder in your AI tool. This is the folder the AI will build your extension in.
-
-> **The AI will ask before it creates or changes files.** That's normal. Read what it wants to do and approve it.
+You need **Google Chrome** on a laptop (Mac, Windows or Linux). If you don't have it, download it from [google.com/chrome](https://www.google.com/chrome/).
 
 ---
 
-## 2. Pick your path
+## 2. Install your AI tool
+
+You need an AI tool that works inside a folder on your computer: you open a folder, describe what you want, and it writes the files for you.
+
+### Already paying for one? Use it.
+
+If you have a paid plan for any of these, use that tonight. They all work with every prompt on this page.
+
+- **[Claude Code](https://docs.claude.com/en/docs/claude-code/overview)** (Claude Pro or Max)
+- **[Cursor](https://cursor.com/download)** (Cursor Pro)
+- **[Codex](https://openai.com/codex/)** (ChatGPT Plus or Pro)
+
+Install it, sign in, and skip ahead to [Get the workshop files](#3-get-the-workshop-files).
+
+### No paid plan? Use OpenCode (free)
+
+[OpenCode](https://opencode.ai) is an open-source AI coding tool, similar to Claude Code. It offers free models, including **GLM 5.3 Flash** and **DeepSeek V4.1 Flash**, so you won't run out of credits halfway through the night.
+
+> The free models are free "for a limited time", according to OpenCode. Check the [model list](https://opencode.ai/docs/zen/) on the night if something looks different from these steps.
+
+#### Step 1: Install the OpenCode app
+
+The desktop app is the easiest way in: no terminal needed.
+
+1. Go to [opencode.ai/download](https://opencode.ai/download)
+2. Download the desktop app for your computer:
+   - **Mac:** pick **Apple Silicon** if your Mac is from 2021 or later (M1, M2, M3, M4…), otherwise **Intel**. Not sure? Click the Apple menu → **About This Mac** and look at "Chip".
+   - **Windows:** download the Windows installer.
+3. Install it:
+   - **Mac:** open the `.dmg` file and drag OpenCode into your **Applications** folder.
+   - **Windows:** run the installer and follow the steps.
+4. Open OpenCode.
+   - **Mac:** if it says the app can't be opened, go to **System Settings → Privacy & Security**, scroll down, and click **Open Anyway**.
+
+<details>
+<summary><b>Prefer the terminal?</b> (click to open)</summary>
+
+Mac or Linux:
+
+```
+curl -fsSL https://opencode.ai/install | bash
+```
+
+Mac with Homebrew:
+
+```
+brew install anomalyco/tap/opencode
+```
+
+Windows (with Scoop):
+
+```
+scoop install opencode
+```
+
+Then go to your project folder in the terminal and run `opencode`.
+
+</details>
+
+#### Step 2: Turn on the free models
+
+1. Go to [opencode.ai/zen](https://opencode.ai/zen) and sign up with your **GitHub** or **Google** account.
+2. In the dashboard, click **Create API Key**, give it any name, and click **Create**.
+3. **Copy the key straight away.** It starts with `sk-` and isn't shown again once you close the box. Paste it into a note for now.
+4. In OpenCode, type `/connect` in the message box and press Enter.
+5. Choose **OpenCode** (Zen) from the list and paste your key.
+
+> **Never share your API key** or paste it into a prompt. It's like a password for your account.
+
+#### Step 3: Pick a free model
+
+1. In OpenCode, type `/models` and press Enter (or click the model name near the message box).
+2. Choose **GLM 5.3 Flash Free** or **DeepSeek V4.1 Flash Free**. Anything marked **Free** costs nothing.
+3. Check it works: type `Say hello` and press Enter. If you get a reply, you're ready.
+
+If one free model is slow or gives odd answers, switch to the other one. You can switch any time without losing your work.
+
+---
+
+## 3. Get the workshop files
+
+The workshop files include a ready-made base extension (Path B below). Even if you build from scratch, it's handy to have, so you can compare when something goes wrong.
+
+Pick **one** of these two options.
+
+### Option 1: Download the ZIP
+
+1. At the top of [this repo's page](https://github.com/jithin-sabu/prjctr-workshop), click the green **Code** button.
+2. Click **Download ZIP**.
+3. Find the downloaded file (usually in your **Downloads** folder): `prjctr-workshop-main.zip`.
+4. Unzip it:
+   - **Mac:** double-click the file.
+   - **Windows:** right-click it → **Extract All** → **Extract**.
+5. Move the unzipped `prjctr-workshop-main` folder somewhere easy to find, like your **Desktop** or **Documents**.
+
+Inside you'll find:
+
+```
+prjctr-workshop-main/
+├── README.md          ← this guide
+└── base-extension/    ← the ready-made base for Path B
+```
+
+### Option 2: Ask your AI tool to get them
+
+1. Make a new empty folder somewhere easy to find, like your Desktop, and call it `workshop`.
+2. Open that folder in your AI tool:
+   - **OpenCode app:** click **Open project** (or **Open folder**) and choose `workshop`.
+   - **Cursor:** **File → Open Folder** and choose `workshop`.
+   - **Claude Code or Codex:** open the `workshop` folder the same way you'd open any project.
+3. Copy this prompt, paste it in, and send it:
+
+```
+Download the files from this GitHub repo into this folder:
+https://github.com/jithin-sabu/prjctr-workshop
+
+If git is installed, clone it. If not, download the ZIP from
+https://github.com/jithin-sabu/prjctr-workshop/archive/refs/heads/main.zip
+and unzip it here.
+
+When you're done, tell me the full path to the "base-extension" folder, and list what's inside it. Don't change any of the files.
+```
+
+4. Approve the steps when the AI asks. When it's finished, it tells you where the `base-extension` folder is.
+
+> **The AI will ask before it runs commands or creates files.** That's normal. Read what it wants to do, and approve it.
+
+---
+
+## 4. Pick your path and build
 
 ### Path A: Start from scratch (recommended)
 
-You'll learn the most by building the whole thing yourself. With your `my-new-tab` folder open, copy this prompt, change the parts in `[brackets]`, and send it:
+You'll learn the most by building the whole thing yourself.
+
+1. Make a new empty folder somewhere easy to find, like your Desktop, and call it `my-new-tab`.
+2. Open that folder in your AI tool (the same way as in [Option 2](#option-2-ask-your-ai-tool-to-get-them) above).
+3. Copy this prompt, change the parts in `[brackets]`, and send it:
 
 ```
 Build me a Chrome extension in this folder that replaces Chrome's new tab page with my own custom page. I'm not a programmer, so keep it simple:
@@ -71,7 +200,9 @@ Technical:
 When you're done, list the files you created in one line each, then tell me step by step how to load the extension in Chrome and how to see my changes after you edit something.
 ```
 
-**Want to start from your own idea instead?** Use this one:
+4. Approve the changes when the AI asks, then go to [Load it into Chrome](#5-load-it-into-chrome).
+
+**Want to start from your own idea instead?** Use this prompt in step 3:
 
 ```
 I want to build a Chrome extension in this folder that replaces Chrome's new tab page. I'm not a programmer.
@@ -83,7 +214,19 @@ Before you build anything, ask me up to 5 questions to understand what I want. T
 
 ### Path B: Start from the base
 
-If you'd rather skip ahead, the [`base-extension`](base-extension) folder has a ready-made sample, built from the prompt below with nothing hand-edited.
+If you'd rather skip ahead, start from the ready-made base in the workshop files.
+
+1. Find the `base-extension` folder from [Get the workshop files](#3-get-the-workshop-files). Copy it somewhere easy to find, like your Desktop, so you keep an untouched original.
+2. Open your copy of `base-extension` in your AI tool.
+3. [Load it into Chrome](#5-load-it-into-chrome) to see what it looks like.
+4. Send this first prompt, so the AI gets to know the project:
+
+```
+This folder is a Chrome extension (Manifest V3) that replaces the new tab page. I'm not a programmer.
+Look through all the files, then explain in a few plain-English sentences what each one does.
+Then change the name in the greeting to [YOUR NAME].
+From now on, keep all JavaScript in .js files, with no inline scripts or onclick="" attributes.
+```
 
 <details>
 <summary><b>The prompt that built the base</b> (click to open)</summary>
@@ -94,7 +237,7 @@ Build me a Chrome extension in this folder that replaces Chrome's new tab page w
 What the page shows:
 1. A greeting that changes with the time of day ("Good morning", "Good afternoon", "Good evening"), followed by my name: [YOUR NAME]. 
 2. A large clock (hours and minutes) that stays up to date, with today's date underneath.
-3. 3. A row of 4 quick-link tiles: [Gmail, YouTube, GitHub, Google Maps], each with the site's name underneath. Use each site's real icon: download its favicon into an "icons" folder inside this extension and show that on the tile. Don't use emoji. If an icon can't be downloaded, show the site's first letter instead.
+3. A row of 4 quick-link tiles: [Gmail, YouTube, GitHub, Google Maps], each with the site's name underneath. Use each site's real icon: download its favicon into an "icons" folder inside this extension and show that on the tile. Don't use emoji. If an icon can't be downloaded, show the site's first letter instead.
 4. Below that, an empty card with a dashed border that says "✨ Your idea goes here". This is a placeholder for features I'll add later.
 
 How it looks:
@@ -108,27 +251,13 @@ Technical:
 
 </details>
 
-1. Click the green **Code** button at the top of this page, then **Download ZIP**.
-2. Unzip it, and move the `base-extension` folder somewhere easy to find, like your Desktop.
-3. Open the `base-extension` folder in your AI tool.
-4. [Load it into Chrome](#3-load-it-into-chrome).
-
-Your first prompt, so the AI gets to know the project:
-
-```
-This folder is a Chrome extension (Manifest V3) that replaces the new tab page. I'm not a programmer.
-Look through all the files, then explain in a few plain-English sentences what each one does.
-Then change the name in the greeting to [YOUR NAME].
-From now on, keep all JavaScript in .js files, with no inline scripts or onclick="" attributes.
-```
-
 ---
 
-## 3. Load it into Chrome
+## 5. Load it into Chrome
 
 1. Open a new tab and go to `chrome://extensions`
 2. Turn on **Developer mode** (switch in the top-right corner)
-3. Click **Load unpacked** and choose your extension folder (the folder itself, not a file inside it)
+3. Click **Load unpacked** and choose your extension folder: `my-new-tab` for Path A, or your copy of `base-extension` for Path B. Pick the folder itself, not a file inside it.
 4. Open a new tab 🎉
 5. Chrome may ask *"Change back to Google?"* or *"Keep this change?"*. Choose **Keep it**.
 
@@ -138,7 +267,7 @@ From now on, keep all JavaScript in .js files, with no inline scripts or onclick
 
 ---
 
-## 4. Add your own features
+## 6. Add your own features
 
 The golden rule: **one feature at a time.** Ask for one thing, reload, check it works, then ask for the next. Big wish lists in one prompt are where things go wrong.
 
@@ -177,7 +306,7 @@ I want [the thing] to be remembered when I close the tab and open a new one. Use
 
 ---
 
-## 5. When it breaks
+## 7. When it breaks
 
 It *will* break at some point. That's normal, and fixing it is half the skill. The AI is very good at fixing its own mistakes if you show it what went wrong.
 
@@ -253,7 +382,7 @@ If the same tool still can't fix it, open the folder in a different AI tool. A s
 
 ---
 
-## 6. Make it look good
+## 8. Make it look good
 
 **A whole new style:**
 
@@ -290,7 +419,7 @@ Use background.jpg in this folder as the page background, with a dark overlay so
 
 ---
 
-## 7. Understand what you built
+## 9. Understand what you built
 
 You don't have to understand code to build things, but a little understanding makes you much better at asking for what you want.
 
@@ -308,7 +437,7 @@ I want to change [small thing, e.g. the greeting text or the colour of the clock
 
 ---
 
-## 8. Level up
+## 10. Level up
 
 Finished early? Try something more ambitious.
 
@@ -341,7 +470,7 @@ How can I share this extension with a friend so they can install it too? Explain
 
 ---
 
-## 9. Stuck for ideas?
+## 11. Stuck for ideas?
 
 Pick one, or mix a few together.
 
@@ -376,20 +505,21 @@ Suggest 10 fun or useful things I could put on it, from easy to ambitious. Don't
 
 ---
 
-## 10. Tools and models
+## 12. Tools and models
 
-**Tonight we're using [TOOL].** Any AI tool that can work inside a folder on your computer does the same job: you open a folder, describe what you want, and it writes and edits the files for you. Others include [OTHER TOOLS].
+Every tool on this page works the same way: you open a folder, describe what you want, and it writes and edits the files for you. Use a paid tool (Claude Code, Cursor, Codex) if you have one, or OpenCode with its free models. Setup is in [Install your AI tool](#2-install-your-ai-tool).
 
 A few things that help:
 
-- **Use the best model your plan gives you** for building. Most tools let you pick the model from a menu near the message box.
+- **Pick a good model.** In paid tools, use the best one your plan gives you. In OpenCode, use **GLM 5.3 Flash Free** or **DeepSeek V4.1 Flash Free** (type `/models` to switch).
+- **Stuck on a bug? Switch models.** A different model often spots the problem straight away. Your files stay where they are.
 - **If your tool offers a "thinking" or "reasoning" mode**, turn it on when something's broken. It's slower but better at finding bugs.
-- **Switch tools when you're stuck.** Your files live in the folder, not in the chat, so you can open the same folder in another tool and carry on.
-- **Free plans have limits.** If you run out, switch tools, or wait and pick up later.
+- **Your files live in the folder, not the chat.** So you can open the same folder in another tool and carry on.
+- **Paid plan running low?** Switch to OpenCode's free models for the rest of the night.
 
 ---
 
-## 11. After tonight
+## 13. After tonight
 
 - **Keep using it.** You'll notice what's missing within a day, and that's your next prompt.
 - **Share what you built** with the club. A screenshot is enough.

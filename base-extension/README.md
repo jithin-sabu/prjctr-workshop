@@ -22,7 +22,7 @@ const YOUR_NAME = "Your Name";
 
 Replace `"Your Name"` with your name, save the file, then on `chrome://extensions` click the refresh icon on **My New Tab**.
 
-Or open this folder in your AI tool and ask it to do it for you. Then head back to the [main README](../README.md#4-add-your-own-features) to start adding features.
+Or open this folder in your AI tool and ask it to do it for you. Then head back to the [main README](../README.md#6-add-your-own-features) to start adding features.
 
 ## Files
 
