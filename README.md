@@ -53,9 +53,8 @@ Install it, sign in, and skip ahead to [Get the workshop files](#3-get-the-works
 
 ### No paid plan? Use OpenCode (free)
 
-[OpenCode](https://opencode.ai) is an open-source AI coding tool, similar to Claude Code. It offers free models, including **GLM 5.3 Flash** and **DeepSeek V4.1 Flash**, so you won't run out of credits halfway through the night.
+[OpenCode](https://opencode.ai) is an open-source AI coding tool, similar to Claude Code. It offers free models, so you won't run out of credits halfway through the night.
 
-> The free models are free "for a limited time", according to OpenCode. Check the [model list](https://opencode.ai/docs/zen/) on the night if something looks different from these steps.
 
 #### Step 1: Install the OpenCode app
 
