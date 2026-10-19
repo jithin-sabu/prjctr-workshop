@@ -98,15 +98,13 @@ Then go to your project folder in the terminal and run `opencode`.
 
 </details>
 
-#### Step 2: Turn on the free models
+#### Step 2: Connect OpenCode
 
-1. Go to [opencode.ai/zen](https://opencode.ai/zen) and sign up with your **GitHub** or **Google** account.
-2. In the dashboard, click **Create API Key**, give it any name, and click **Create**.
-3. **Copy the key straight away.** It starts with `sk-` and isn't shown again once you close the box. Paste it into a note for now.
-4. In OpenCode, type `/connect` in the message box and press Enter.
-5. Choose **OpenCode** (Zen) from the list and paste your key.
-
-> **Never share your API key** or paste it into a prompt. It's like a password for your account.
+1. In OpenCode, type `/connect` in the message box and press Enter.
+2. Choose **OpenCode** from the list.
+3. A browser page opens. Log in with your **Google** or **GitHub** account.
+4. Click **Authorise** to let the OpenCode app use your account.
+5. Go back to the OpenCode app. You're connected.
 
 #### Step 3: Pick a free model
 
